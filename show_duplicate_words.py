@@ -2,6 +2,9 @@ import sublime
 import sublime_plugin
 import collections, re, string
 
+PLUGIN_NAME = "show_duplicate_words"
+SETTINGS_FILE = PLUGIN_NAME + ".sublime-settings"
+
 def filter_list(full_list, excludes):
     s = set(excludes)
     return (x for x in full_list if x not in s)
@@ -13,7 +16,7 @@ def show_words(text, view, edit):
     text = excludepunctuation.sub('', text)
     words = text.split()
     words = map(lambda x:x.lower(),words)
-    stopwords = ["the","a","of","and","to","in","for","be","or","is","as","that","may","with","by","on","not","are","an","it","they","such","this","which","it's","at","if","them","their","have","where","than"]
+    stopwords = sublime.Settings.get(sublime.load_settings(SETTINGS_FILE), 'ignored_words', {})
     cleanedwords = list(filter_list(words, stopwords))
     word_counts = collections.Counter(cleanedwords)
     for word, count in sorted(word_counts.items(), key=lambda times: times[1]):
