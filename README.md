@@ -1,1 +1,3 @@
 This plugin for Sublime Text allows you to view all the duplicate words in the current document or in the selection. Currently works well only with English. Useful for reviewing how repetitive you are and where you could use some synonims.
+
+You can execute it by a menu command called `Show Duplicate Words`. If you want you can assign a shortcut to it to your taste. You can also redefine the list of ignored words by creating a file named `show_duplicate_words.sublime-settings` in the `User` directory.
