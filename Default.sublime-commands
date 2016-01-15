@@ -1,0 +1,6 @@
+[
+	{
+		"caption": "Show Duplicate Words",
+		"command": "show_duplicate_words"
+	}
+]
