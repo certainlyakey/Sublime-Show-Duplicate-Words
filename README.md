@@ -1,0 +1,1 @@
+This plugin for Sublime Text allows you to view all the duplicate words in the current document or in the selection. Currently works well only with English. Useful for reviewing how repetitive you are and where you could use some synonims.
